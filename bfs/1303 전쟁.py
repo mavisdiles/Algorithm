@@ -7,7 +7,7 @@ w, b = 0,0
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
 
-def bfs(x,y,color):
+def bfs(x,y,color): #검색 시작 좌표, 팀 색깔을 변수로 받음
     queue = deque()
     queue.append((x,y))
     count = 0
@@ -22,7 +22,7 @@ def bfs(x,y,color):
                     queue.append((xx,yy))
                     visited[xx][yy] = True
                     count += 1 
-    return count +1
+    return count +1 #추가된 큐 개수(count)에 처음 큐 개수(1) 더해줌
 
 for i in range(m):
     for j in range(n):

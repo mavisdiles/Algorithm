@@ -14,14 +14,14 @@ def bfs():
 
     while queue:
         x,y = queue.popleft()
-        if x==n-1 and y==m-1:     
+        if x==n-1 and y==m-1: #가장 먼저 미로 도착한 케이스에서 탈출
             return visited[x][y]
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
             if 0<=nx<n and 0<=ny<m:
                 if graph[nx][ny] == '1' and not visited[nx][ny] :  
-                    visited[nx][ny] = visited[x][y] + 1
+                    visited[nx][ny] = visited[x][y] + 1 # 지나온 만큼 visit 스탬프
                     queue.append((nx,ny))          
     
 print(bfs())
