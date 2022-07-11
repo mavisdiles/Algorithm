@@ -4,8 +4,8 @@ edges = []
 dist = [inf]*(n+1)
 
 for i in range(m):
-    a,b,c = map(int,input().split())
-    edges.append((a,b,c))
+    s,d,w = map(int,input().split())
+    edges.append((s,d,w))
 
 def bellmanford(start):
     dist[start] = 0
@@ -13,7 +13,7 @@ def bellmanford(start):
         for s,d,w in edges:
             if dist[s] != inf and dist[d] > dist[s]+w:
                 dist[d] = dist[s]+w
-                if i == n-1: # 계속 갱신되면 무한반복
+                if i == n-1: # n번째에도 계속 갱신되면 음수간선
                     return -1
     return dist
             
