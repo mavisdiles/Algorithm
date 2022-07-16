@@ -14,6 +14,8 @@ tree[0] = Node(0)
 for i in range(1,len(nodes)):
     parent = nodes[i]
     tree[i] = Node(i)
+    if parent == -1:
+        continue
     if tree[parent].left == None:
         tree[parent].left = i
     elif tree[parent].right == None:
@@ -24,6 +26,11 @@ def delete(target):
         delete(tree[target].left)
     if tree[target].right:
         delete(tree[target].right)
+    
+    if tree[nodes[target]].left == tree[target]:
+        tree[nodes[target]].left =None
+    elif tree[nodes[target]].right == tree[target]:
+        tree[nodes[target]].right =None
     del(tree[target])
 
 delete(target)
