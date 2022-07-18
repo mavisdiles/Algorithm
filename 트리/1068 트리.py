@@ -1,3 +1,4 @@
+#키에러 실패 -> 자식 노드가 2개가 아닐수도 있다.
 n = int(input())
 nodes = list(map(int,input().split()))
 target = int(input())
