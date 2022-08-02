@@ -1,3 +1,4 @@
+# 불통, 다익스트라 이용
 import sys
 import heapq
 
