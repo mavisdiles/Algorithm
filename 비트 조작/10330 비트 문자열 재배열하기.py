@@ -21,7 +21,7 @@ def bfs():
             if new_code not in visited:
                 que.append((new_code,count+1))
                 visited.append(new_code)
-
+"""
 def check(code,answer):
     temp = 1
     result = []
@@ -42,5 +42,24 @@ def check(code,answer):
         return True
     else:
         return False
+"""
+def check(code,answer):
+    temp = 1
+
+    if n==1:
+        return True
+
+    for i in range(1,n):  
+        print(answer)  
+        if not answer:
+            break  
+        if code[i] == code[i-1]:
+            temp +=1
+        else:
+            if temp != answer.pop(0):
+                return False
+            temp = 1
+
+    return True
 
 bfs()
