@@ -5,8 +5,6 @@ board=[]
 for i in range(n):
     board.append(list(map(int,input().split())))
 
-
-
 def score(cur_xy, current_num):
     count = bfs(cur_xy,current_num)
     score = current_num *count
